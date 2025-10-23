@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Usuário</title>
     <link rel="stylesheet" href="../../Assets/CSS/style.css">
+
 </head>
 <body>
     <form method="POST">
