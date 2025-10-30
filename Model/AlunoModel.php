@@ -13,11 +13,14 @@ class AlunoModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function buscarAluno($id): array{
+    // Buscar um aluno pelo ID. Retorna array associativo ou null se não encontrado.
+    public function buscarAluno($id): ?array {
         $stmt = $this->pdo->prepare('SELECT * FROM alunos WHERE id = :id');
         $stmt->execute(['id' => $id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result !== false ? $result : null;
     }
+
 
     public function cadastrarAluno($nome, $email, $senha){
         $sql = ('INSERT INTO alunos (nome, email, senha) VALUES (:nome, :email, :senha)');

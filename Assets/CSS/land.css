@@ -1,0 +1,30 @@
+body { margin: 0; font-family: Arial; background: #111; color: white; }
+.hero { position: relative; text-align: center; }
+.hero-bg { width: 100%; height: 90vh; object-fit: cover; opacity: 0.7; }
+.hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.btn { background: red; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; }
+.cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.card { background: #222; padding: 20px; border-radius: 10px; width: 250px; text-align: center; }
+
+/* Padroniza imagens para evitar quebras no layout */
+.card img,
+.modalidades .card img {
+	width: 100%;
+	height: 160px; /* altura fixa para todos os cards */
+	object-fit: cover; /* corta a imagem mantendo o foco no centro */
+	border-radius: 8px;
+	display: block;
+}
+
+.sobre .imagem img {
+	width: 100%;
+	height: 250px; /* altura fixa para imagem "sobre" */
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+/* garante que imagens responsivas não excedam os contêineres */
+img { max-width: 100%; height: auto; }
+
+/* ajuste para o hero (já tem object-fit, mantemos e limitamos mínimo) */
+.hero-bg { width: 100%; height: 90vh; object-fit: cover; opacity: 0.7; min-height: 360px; }
