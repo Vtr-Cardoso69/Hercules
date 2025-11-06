@@ -1,0 +1,170 @@
+:root {
+    --color-primary: #1a1a1a; /* Preto Quase Total */
+    --color-secondary: rgb(244, 199, 1); /* Amarelo Vibrante */
+    --fundo-principal: url('../img/fundo1.jpg');
+    --color-light-gray: #6d6d6d; /* Cinza Claro para fundos de destaque */
+    --color-text: #171717; /* Cinza Escuro para texto */
+    --color-border: #dddddd; /* Borda Suave */
+    --color-danger: #cc0000; /* Vermelho para deletar */
+    --color-success: #008000; /* Verde para sucesso (Editar) */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+   
+    background: linear-gradient(rgba(0, 0, 0, 0.797), rgba(0, 0, 0, 0.797)), var(--fundo-principal);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+  
+}
+
+
+
+h1 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+p {
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: var(--color-primary);
+}
+
+
+
+.login {
+    background-color: #ffffff;
+    max-width:400px;
+    margin:40px auto;
+    padding:20px;
+    border:1px solid #000000ff;
+    border-radius: 6px;
+}
+form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*   FORMS   */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--color-secondary);
+    outline: none;
+}
+
+/*BOTÕES*/
+button[type="submit"] {
+    background-color: rgb(255, 213, 0);
+    color: var(--color-primary);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 100%;
+    margin-top: 10px;
+}
+button[type="submit"]:hover {
+    background-color: #e6b801; 
+    transform: translateY(-1px);
+}
+
+
+
+
+/* Responsividade Básica (Opcional, mas bom para clean design) */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    form {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+   
+    /* Esconde cabeçalhos da tabela */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+   
+    tr {
+        border: 1px solid var(--color-border);
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+   
+    td {
+        border: none;
+        border-bottom: 1px solid var(--color-light-gray);
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+   
+    td:before {
+        /* Cria um "cabeçalho" para cada célula */
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+   
+    /* Mapeamento dos cabeçalhos (baseado na ordem da tabela) */
+    td:nth-of-type(1):before { content: "ID:"; }
+    td:nth-of-type(2):before { content: "Nome:"; }
+    td:nth-of-type(3):before { content: "Email:"; }
+    td:nth-of-type(4) {
+        text-align: center;
+        padding-left: 15px; /* Remove o padding extra para a coluna de ações */
+    }
+    td:nth-of-type(4):before { content: "Ações:"; display: none;} /* Não mostra o cabeçalho para Ações */
+}

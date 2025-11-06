@@ -13,14 +13,13 @@ class AlunoModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Buscar um aluno pelo ID. Retorna array associativo ou null se não encontrado.
+    
     public function buscarAluno($id): ?array {
         $stmt = $this->pdo->prepare('SELECT * FROM alunos WHERE id = :id');
         $stmt->execute(['id' => $id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result !== false ? $result : null;
     }
-
 
     public function cadastrarAluno($nome, $email, $senha){
         $sql = ('INSERT INTO alunos (nome, email, senha) VALUES (:nome, :email, :senha)');
@@ -30,6 +29,22 @@ class AlunoModel{
             'email'=>$email,
             'senha'=>password_hash($senha, PASSWORD_DEFAULT)
         ]);
+    }
+
+    // Busca aluno pelo email (útil para validações)
+    public function buscarPorEmail($email): ?array {
+        $stmt = $this->pdo->prepare('SELECT * FROM alunos WHERE email = :email');
+        $stmt->execute(['email' => $email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result !== false ? $result : null;
+    }
+
+    // Busca aluno pelo nome (útil se armazenamos o nome no registro de treinos)
+    public function buscarPorNome($nome): ?array {
+        $stmt = $this->pdo->prepare('SELECT * FROM alunos WHERE nome = :nome');
+        $stmt->execute(['nome' => $nome]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result !== false ? $result : null;
     }
 
     public function editarAluno($id, $nome, $email, $senha){

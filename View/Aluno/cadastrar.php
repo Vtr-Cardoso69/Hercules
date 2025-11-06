@@ -1,16 +1,35 @@
 <?php
 require_once 'C:/Turma1/xampp/htdocs/Hercules/DB/Database.php';
 require_once 'C:/Turma1/xampp/htdocs/Hercules/Controller/AlunoController.php';
+
+// Inicia sessão para permitir login automático após cadastro
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $AlunoController = new AlunoController($pdo);
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $senha = $_POST['senha'] ?? '';
+
+    // Efetua o cadastro do aluno
     $AlunoController->cadastrar($nome, $email, $senha);
-    header('Location: ../../index.php');
+
+    // Autentica automaticamente o usuário recém-cadastrado
+    $usuario = $AlunoController->autenticar($email, $senha);
+    if ($usuario) {
+        $_SESSION['user_id'] = $usuario['id'];
+        $_SESSION['user_email'] = $usuario['email'];
+        $_SESSION['user_nome'] = $usuario['nome'];
+        header('Location: ../../index.php');
+        exit;
+    }
+
+    // Caso não autentique por algum motivo, redireciona ao login
+    header('Location: ../login.php');
+    exit;
 }
 ?>
 
@@ -20,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuário</title>
- <link rel="stylesheet" href="../../Assets/CSS/style.css">
+ <link rel="stylesheet" href="../../Assets/CSS/login_cadastro.css">
 
 </head>
 <body>

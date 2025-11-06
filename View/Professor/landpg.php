@@ -107,9 +107,31 @@
         <button type="submit">Entrar</button>
     </form>
 
+ <div>
+                <a href="../../index.php" class="btn btn-back">Voltar</a>
+            </div>
+
     <?php if(!empty($erro)) echo "<div class='error'>$erro</div>"; ?>
 
   </div>
+
+ 
+<style>
+        .btn-back {
+            background: #666;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+         .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+</style>
 
 </body>
 </html>

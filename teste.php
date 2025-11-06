@@ -1,1 +1,5 @@
-<h1>ok</h1>
+
+</h1>
+<?php
+include_once "View/Aluno/Treino.php";
+?>

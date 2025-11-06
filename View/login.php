@@ -27,10 +27,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'], $_POST['senha'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Hercules</title>
-    <link rel="stylesheet" href="../Assets/CSS/style.css">
+    <link rel="stylesheet" href="../Assets/CSS/login_cadastro.css">
 </head>
 <body>
-    <div style="max-width:400px;margin:40px auto;padding:20px;border:1px solid #ddd;border-radius:6px;">
+    <div class="login">
         <h2>Login</h2>
         <?php if(!empty($erro)) echo "<p style='color:red;'>$erro</p>"; ?>
         <form method="POST">

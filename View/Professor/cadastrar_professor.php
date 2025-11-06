@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Professor</title>
-    <link rel="stylesheet" href="../../Assets/CSS/style.css">
+    <link rel="stylesheet" href="../../Assets/CSS/login_cadastro.css">
 </head>
 <body>
     <div style="max-width:600px;margin:40px auto;padding:20px;background:#fff;border-radius:8px;">

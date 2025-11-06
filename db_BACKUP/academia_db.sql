@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/10/2025 às 16:16
+-- Tempo de geração: 05/11/2025 às 23:33
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -47,6 +47,13 @@ CREATE TABLE `professores` (
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `professores`
+--
+
+INSERT INTO `professores` (`id`, `nome`, `email`, `senha`) VALUES
+(4, 'Pérola', 'perola@gmail.com', '$2y$10$3qwM/kl1S5uBN6AML7/m1OdQgx7v8Vu9TgqpSJRZNyXJywOeXki9y');
+
 -- --------------------------------------------------------
 
 --
@@ -55,11 +62,19 @@ CREATE TABLE `professores` (
 
 CREATE TABLE `treinos` (
   `id` int(11) NOT NULL,
-  `nome_al` int(255) NOT NULL,
-  `nome_pro` int(11) NOT NULL,
-  `data` date NOT NULL,
-  `frequencia` varchar(255) NOT NULL
+  `aluno_nome` varchar(255) NOT NULL,
+  `professor_id` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `modalidade` varchar(255) NOT NULL,
+  `data_criacao` varchar(255) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `treinos`
+--
+
+INSERT INTO `treinos` (`id`, `aluno_nome`, `professor_id`, `descricao`, `modalidade`, `data_criacao`) VALUES
+(3, 'Adalto', '4', '555', 'Spinning', '2025-11-04 20:00:00');
 
 --
 -- Índices para tabelas despejadas
@@ -91,19 +106,19 @@ ALTER TABLE `treinos`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `professores`
 --
 ALTER TABLE `professores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `treinos`
 --
 ALTER TABLE `treinos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

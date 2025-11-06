@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body { 
+    margin: 0 auto; font-family: Arial; background: #111; color: white; 
+}
+.container{ 
+    max-width: 1400px; margin: 0 auto; padding: 0 4%;
+}
+
+
+/*BANNER*/
+.hero {
+    position: relative; text-align: center; 
+}
+.hero-img { 
+    width: 100%; height: 90vh; object-fit: cover; opacity: 0.7; 
+}
+.hero-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.hero-text h1 {
+    font-family: "Caesar Dressing", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 110px;
+    color: darkgoldenrod;
+}
+
+
+
+/* TÍTULOS GERAIS */
+ h2 {
+    color: rgb(204, 147, 3);
+}
+
+
+
+.btn { 
+    background: rgb(198, 146, 1); color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px;
+}
+.cards { 
+    display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; 
+}
+.card1, .card2, .card3 { 
+    background: #222; padding: 20px; border-radius: 10px; width: 250px; text-align: center; 
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+}
+.card1:hover, .card2:hover, .card3:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.093);
+}
+
+
+
+/* IMAGENS */
+.cards img {
+    width: 100%;
+    height: 160px; /* altura fixa para todos os cards */
+    object-fit: cover; /* corta a imagem mantendo o foco no centro */
+    border-radius: 8px;
+    display: block;
+}
+.hero img   , .sobre img{
+  opacity: 0.2;
+}  
+
+
+
+/*OPÇÕES*/
+.modalidades {
+    border-top: 1px solid rgba(255,255,255,0.06); /*LINHA SEPARA*/
+    margin-bottom: 30px; 
+    padding-bottom: 20px; 
+    margin-top: 50px;
+}
+.planos {
+    padding-bottom: 40px; 
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.06); /*LINHA SEPARA*/
+    border-bottom: 1px solid rgba(255,255,255,0.06); /*LINHA SEPARA*/
+}
+.sobre .imagem img {
+    width: 100%;
+    height: 250px; /* altura fixa para imagem "sobre" */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+.rodape{
+    color:white;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 99%;
+    background-color:rgba(0, 0, 0, 0.278)
+}
