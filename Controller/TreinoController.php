@@ -1,7 +1,7 @@
 <?php
-require_once 'C:/Turma1/xampp/htdocs/Hercules/Model/TreinoModel.php';
-require_once 'C:/Turma1/xampp/htdocs/Hercules/Model/ProfessorModel.php';
-require_once 'C:/Turma1/xampp/htdocs/Hercules/Model/AlunoModel.php';
+require_once 'C:/Turma1/xampp/htdocs/SISTEMA/Model/TreinoModel.php';
+require_once 'C:/Turma1/xampp/htdocs/SISTEMA/Model/ProfessorModel.php';
+require_once 'C:/Turma1/xampp/htdocs/SISTEMA/Model/AlunoModel.php';
 
 class TreinoController {
     private $TreinoModel;

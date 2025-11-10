@@ -45,11 +45,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'], $_POST['senha'
             <div style="margin-top:12px;">
                 <button type="submit" style="padding:10px 16px;">Entrar</button>
             </div>
+       
+        <div>
+                <a href="../index.php" class="btn btn-back">Voltar</a>
+</div>
+
+
         </form>
    <p style="margin-top:12px;">
   Não tem conta?
-  <a href="/Hercules/View/Aluno/cadastrar.php">Cadastrar</a>
-  <a href="/Hercules/View/Professor/landpg.php" style="margin-left: 109px;">Instrutor</a>
+  <a href="/SISTEMA/View/Aluno/cadastrar.php">Cadastrar</a>
+  <a href="/SISTEMA/View/Professor/landpg.php" style="margin-left: 109px;">Instrutor</a>
 </p>
 
 </html>
+<style>
+        .btn-back {
+            background: #666;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: 10px;
+            margin-left: 105px;
+        }
+         .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+</style>

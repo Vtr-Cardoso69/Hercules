@@ -4,6 +4,10 @@ require_once '../../Controller/ProfessorController.php';
 require_once '../../Controller/AlunoController.php';
 require_once '../../Controller/TreinoController.php';
 
+
+
+
+
 // Inicializa os controllers
 $ProfessorController = new ProfessorController($pdo);
 $AlunoController = new AlunoController($pdo);
@@ -14,6 +18,7 @@ $professores = $ProfessorController->listar();
 $alunos = $AlunoController->listar();
 $treinos = $TreinoController->listar();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -105,7 +110,7 @@ $treinos = $TreinoController->listar();
                     <th>Descrição</th>
                     <th>Modalidade</th>
                     <th>Data de Criação</th>
-                    <th>Ações</th>
+                  
                 </tr>
                 <?php foreach ($treinos as $treino): ?>
                     <tr>
@@ -115,13 +120,7 @@ $treinos = $TreinoController->listar();
                         <td><?= htmlspecialchars($treino['descricao']) ?></td>
                         <td><?= htmlspecialchars($treino['modalidade'] ?? '—') ?></td>
                         <td><?= htmlspecialchars($treino['data_criacao'] ?? '—') ?></td>
-                        <td>
-                            <a class="edit" href="editar_treino.php?id=<?= $treino['id'] ?>">Editar</a>
-                            <a class="del" href="deletar_treino.php?id=<?= $treino['id'] ?>" 
-                               onclick="return confirm('Tem certeza que deseja excluir este treino?')">
-                                Deletar
-                            </a>
-                        </td>
+                       
                     </tr>
                 <?php endforeach; ?>
             </table>

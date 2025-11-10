@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if (empty($_SESSION['user_id'])) {
-    header('Location: /Hercules/View/login.php');
+    header('Location: /SISTEMA/View/login.php');
     exit;
 }
 

@@ -10,7 +10,7 @@
     if (!$logged) {
         // Usuário não autenticado: botão de login alinhado à direita mantendo inline-flex
         echo "<div class='login-wrap'>";
-        echo "<a class='login-button1' href='/Hercules/View/login.php' title='Login'>";
+        echo "<a class='login-button1' href='/SISTEMA/View/login.php' title='Login'>";
         echo "<span>Login</span>";        
         echo "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"20px\" viewBox=\"0 -960 960 960\" width=\"20px\" fill=\"#ff7a00\"><path d=\"M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z\"/></svg>";
         echo "</a>";
@@ -19,7 +19,7 @@
           $nome = htmlspecialchars($_SESSION['user_nome'] ?? $_SESSION['user_email']);
        
         echo "<div class='login-wrap'>";
-        echo "<a class='login-bar-button' href='/Hercules/Controller/LogoutController.php' title='Logout'>";
+        echo "<a class='login-bar-button' href='/SISTEMA/Controller/LogoutController.php' title='Logout'>";
         echo "<span>Sair de $nome</span>";             
         echo "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"20px\" viewBox=\"0 -960 960 960\" width=\"20px\" fill=\"#ff7a00\"><path d=\"M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z\"/></svg>";
         echo "</a>";
@@ -79,7 +79,7 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/Hercules/Assets/CSS/landpg.css">
+      <link rel="stylesheet" href="/SISTEMA/Assets/CSS/landpg.css">
       <title>Hercules Gym</title>
      
     <style>
@@ -179,7 +179,7 @@
     <!-- Menu Lateral -->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/Hercules/View/Aluno/historico.php">Histórico</a>
+        <a href="/SISTEMA/View/Aluno/historico.php">Histórico</a>
         <a href="#cards">Treinos</a>
     </div>
 
@@ -189,7 +189,7 @@
     <div id="main">
         <!-- 🏋️ HERO / CAPA -->
         <div class="hero">
-            <img src="/Hercules/Assets/img/banner.jpg" alt="Hercules Gym" class="hero-img">
+            <img src="/SISTEMA/Assets/img/banner.jpg" alt="Hercules Gym" class="hero-img">
             <div class="hero-text">
                 <h1>HERCULES GYM</h1>
                 <p>Força. Foco. Disciplina.</p>
@@ -270,19 +270,19 @@
         <div class="cards">
             
             <div class="card1">
-                <a href="/Hercules/View/Aluno/Treino.php?modalidade=Musculação">
+                <a href="/SISTEMA/View/Aluno/Treino.php?modalidade=Musculação">
                     <img src="Assets/img/forte.jpg" alt="Musculação"></a>
                 <h3>Musculação</h3> 
             </div>  
                     
             <div class="card2">
-                <a href="/Hercules/View/Aluno/Treino.php?modalidade=Funcional">
+                <a href="/SISTEMA/View/Aluno/Treino.php?modalidade=Funcional">
                     <img src="Assets/img/funcional.jpg" alt="Treino Funcional"></a>
                 <h3>Funcional</h3>
             </div>
             
             <div class="card3">
-                <a href="/Hercules/View/Aluno/Treino.php?modalidade=Spinning">
+                <a href="/SISTEMA/View/Aluno/Treino.php?modalidade=Spinning">
                     <img src="Assets/img/spinning.jpg" alt="Spinning"></a>
                 <h3>Spinning</h3>
             </div>
@@ -297,22 +297,22 @@
             
             <div class="card1">
                 <h3>Básico</h3>
-                <p>R$ 70 / mês</p>
-                <p>Acesso livre à musculação</p>
+                <p>R$ 40 / 1 mês</p>
+                <br>
                 <a href="#" class="btn">Assinar</a>
             </div>
             
             <div class="card2">
                 <h3>Premium</h3>
-                <p>R$ 80 / mês</p>
-                <p>Musculação + Funcional</p>
+                <p>R$ 150 / 4 mês</p>
+                <br>
                 <a href="#" class="btn">Assinar</a>
             </div>
             
             <div class="card3">
                 <h3>VIP</h3>
-                <p>R$ 140 / mês</p>
-                <p>Todas as modalidades + Personal</p>
+                <p>R$ 380 / 1 ano </p>
+                <br>
                 <a href="#" class="btn">Assinar</a>
             </div>
         

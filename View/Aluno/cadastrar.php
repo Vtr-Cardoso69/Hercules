@@ -1,6 +1,6 @@
 <?php
-require_once 'C:/Turma1/xampp/htdocs/Hercules/DB/Database.php';
-require_once 'C:/Turma1/xampp/htdocs/Hercules/Controller/AlunoController.php';
+require_once 'C:/Turma1/xampp/htdocs/SISTEMA/DB/Database.php';
+require_once 'C:/Turma1/xampp/htdocs/SISTEMA/Controller/AlunoController.php';
 
 // Inicia sessão para permitir login automático após cadastro
 if (session_status() === PHP_SESSION_NONE) {

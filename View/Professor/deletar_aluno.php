@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../Controller/AlunoController.php';
 $AlunoController = new AlunoController($pdo);
 
 if (!isset($_GET['id'])) {
-    header('Location: /Hercules/View/Professor/listar.php');
+    header('Location: /SISTEMA/View/Professor/listar.php');
     exit;
 }
 
@@ -17,7 +17,7 @@ $id = $_GET['id'];
 $aluno = $AlunoController->buscarAluno($id);
 
 if (!$aluno) {
-    header('Location: /Hercules/View/Professor/listar.php');
+    header('Location: /SISTEMA/View/Professor/listar.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $success = $AlunoController->deletar($id);
         // opcional: você pode tratar $success para mostrar mensagem
     }
-    header('Location: /Hercules/View/Professor/listar.php');
+    header('Location: /SISTEMA/View/Professor/listar.php');
     exit;
 }
 ?>
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>Tem certeza que deseja excluir o aluno "<?php echo htmlspecialchars($aluno['nome']); ?>"?</p>
         <form method="POST">
             <input type="hidden" name="confirmar" value="sim">
-            <a href="/Hercules/View/Professor/listar.php" style="margin-right:10px;">Cancelar</a>
+            <a href="/SISTEMA/View/Professor/listar.php" style="margin-right:10px;">Cancelar</a>
             <button type="submit" style="background:#f44336;color:#fff;padding:8px 12px;border:none;border-radius:4px;">Confirmar Exclusão</button>
         </form>
     </div>

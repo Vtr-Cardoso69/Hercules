@@ -104,12 +104,18 @@
     <form method="POST">
         <input type="text" name="usuario" placeholder="Usuário" required>
         <input type="password" name="senha" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
+        
+        <form action="passou.php" method="post"> 
+        <button class="btn btn-back" type="submit" name="acesso1" value="ok1">Entrar</button>
+        </form> 
+
     </form>
 
- <div>
-                <a href="../../index.php" class="btn btn-back">Voltar</a>
-            </div>
+<div>
+  <form action="passou.php" method="post">               
+     <a href="../../index.php" class="btn btn-back"> Voltar</a>
+  </form>   
+</div>
 
     <?php if(!empty($erro)) echo "<div class='error'>$erro</div>"; ?>
 
