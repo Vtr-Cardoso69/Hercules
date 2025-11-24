@@ -1,11 +1,21 @@
+<?php 
+session_start();
+
+if (
+    !isset($_SESSION['prof_logged_in']) &&
+    !isset($_SESSION['prof_id'])
+) {
+    // Impede entrar pela URL
+    header("Location: ../login.php");
+    exit;
+}
+?>
+
 <?php
 require_once '../../DB/Database.php';
 require_once '../../Controller/ProfessorController.php';
 require_once '../../Controller/AlunoController.php';
 require_once '../../Controller/TreinoController.php';
-
-
-
 
 
 // Inicializa os controllers
